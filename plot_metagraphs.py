@@ -91,16 +91,17 @@ if __name__ == "__main__":
     first_idx = 1
     for ax_idx, ax in enumerate(axes):
         ax.set_xticks(np.arange(0,population_size))
-        ax.set_xticklabels([str(i) for i in range(first_idx,population_size+first_idx)])
+        ax.set_xticklabels([str(i) for i in range(first_idx,population_size+first_idx)], fontsize=8)
         ax.set_yticks(np.arange(0,population_size))
-        ax.set_yticklabels([str(i) for i in range(first_idx,population_size+first_idx)])
+        ax.set_yticklabels([str(i) for i in range(first_idx,population_size+first_idx)], fontsize=8)
     
-    title_size = 15
+    title_size = 14
+    axis_label_size = 11
     axes[0].set_title("FP", fontsize=title_size)
     axes[1].set_title("AFP", fontsize=title_size)
-    axes[2].set_title("AFP (2 initial FP)", fontsize=title_size)
-    axes[0].set_ylabel("Learner", fontsize=12)
-    axes[0].set_xlabel("Opponent probability", fontsize=12)
+    axes[2].set_title("AFP (2 initial FP steps)", fontsize=title_size)
+    axes[0].set_ylabel("Learner", fontsize=axis_label_size)
+    axes[0].set_xlabel("Opponent probability", fontsize=axis_label_size)
     
     save=True
     if save:

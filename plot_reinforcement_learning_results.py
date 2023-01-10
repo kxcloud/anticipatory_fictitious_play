@@ -192,10 +192,11 @@ for filepath in filenames:
     #%% Plot exploitability
     fig, ax = plt.subplots()
     
-    plot_utils.plot_with_confidence(ax, x=range(population_size-1), data=all_exploitability["afp"], c="C1", label="AFP", lw=2)
-    plot_utils.plot_with_confidence(ax, x=range(population_size-1), data=all_exploitability["fp"], c="C0", label="FP", ls="--", lw=1.6)
+    plot_utils.plot_with_confidence(ax, x=range(population_size-1), data=all_exploitability["afp"], c="C1", label="AFP", lw=2, alpha=ALPHA)
+    plot_utils.plot_with_confidence(ax, x=range(population_size-1), data=all_exploitability["fp"], c="C0", label="FP", ls="--", lw=1.6, alpha=ALPHA)
     # plot_utils.plot_with_confidence(ax, x=range(0,population_size-1,2), data=all_exploitability["afp"][:,::2], c="C1", label="AFP", lw=1.5)
     ax.set_xlabel("Agent index")
+    ax.set_xticks(range(population_size-1))
     ax.set_ylabel("Worst case payoff")
     ax.set_title(f"Exploitability: {filename}")
     ax.legend()

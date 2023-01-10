@@ -86,6 +86,7 @@ SAVE_FIGURES = True
 
 # filenames = glob.glob(os.path.join(data_path,"*.csv"))
 filenames = glob.glob(os.path.join(data_path,"footsies-p13-12500.csv"))
+# filenames = glob.glob(os.path.join(data_path,"rws-p12-12500.csv"))
 
 for filepath in filenames:
     filename = filepath.split("\\")[-1].split(".")[0]
@@ -191,9 +192,15 @@ for filepath in filenames:
     plot_utils.plot_with_confidence(ax, x=range(1,population_size), data=-all_exploitability["fp"], c="C0", label="FP", ls="--", lw=1.6, alpha=ALPHA)
     # plot_utils.plot_with_confidence(ax, x=range(0,population_size-1,2), data=all_exploitability["afp"][:,::2], c="C1", label="AFP", lw=1.5)
     ax.set_xlabel("Agent index")
+    ax.set_xticks(range(1, population_size))
     ax.set_ylabel("Estimated worst case payoff")
-    ax.set_title(f"Exploitability of NeuPL-FP and Neupl-AFP on TinyFighter")
+    ax.set_title(f"Performance of NeuPL-FP and Neupl-AFP on TinyFighter")
     ax.legend(loc=4)
+    
+    fp_exp_final = np.mean(all_exploitability["fp"], axis=0)[-1].round(1)
+    afp_exp_final = np.mean(all_exploitability["afp"], axis=0)[-1].round(1)
+    pct = (afp_exp_final - fp_exp_final)/20
+    print(f"afp_exp_final: {afp_exp_final}, fp_exp_final: {fp_exp_final} {pct}")
     
     if SAVE_FIGURES:
         plt.tight_layout()
