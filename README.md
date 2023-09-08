@@ -1,5 +1,6 @@
 # AFP
-This repo corresponds to the paper _Anticipatory Fictitious Play_ by Cloud, Wang and Kerr (preprint 2022). It contains matrix game simulations for FP, AFP, and other variants, and scripts for generating the plots in the paper. **Note: this code is not cleaned up, organized, or optimized, and is merely presented for the sake of replicability.**
+This repo corresponds to the paper [Anticipatory Fictitious Play](https://www.ijcai.org/proceedings/2023/0009) (Cloud, Wang, and Kerr, 2023). It contains matrix game simulations for FP, AFP, and other variants, and scripts for generating the plots in the paper. Deep learning environments, algorithms, and experiment parameters are property of Riot Games and are *not* included here. **Note: this code is not cleaned up, organized, or optimized, and is merely presented for the sake of replicability.**
+
 
 The key scripts are...
 
